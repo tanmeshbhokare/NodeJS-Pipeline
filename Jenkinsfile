@@ -34,5 +34,25 @@ stages {
             sh 'npm publish'
             }
         }
+    stage('Deploy to Web Server'){
+        steps{
+	    withCredentials([sshUserPrivateKey(credentialsId: "jenkins-ssh", keyFileVariable: 'sshkey')])
+		{
+            	   echo 'deploying the software'
+ 		   
+		   sh '''#!/bin/bash
+ 		   echo "Creating .ssh"
+ 		   mkdir -p /var/lib/jenkins/.ssh
+ 		   ssh-keyscan 10.200.0.187 >> /var/lib/jenkins/.ssh/known_hosts
+ 		   
+ 		   rsync -avz --exclude  '.git' --delete -e "ssh -i $sshkey" ./ ec2-user@10.200.0.187:/home/ec2-user/app/
+		   
+ 		   ssh -i $sshkey ec2-user@10.200.0.187 "./home/ec2-user/app/scripts/stopApp.sh" 		   
+ 		   ssh -i $sshkey ec2-user@10.200.0.187 "./home/ec2-user/app/scripts/runApp.sh"
+ 		   
+ 		  '''            	
+		}
+            }
+        }
     }
 }
