@@ -4,7 +4,7 @@
   "description": "description",
   "main": "index.js",
   "publishConfig": {
-    "registry": "https://3071-103-102-31-35.in.ngrok.io/artifactory/NodeApp/"
+    "registry": "https://6479-103-102-31-32.in.ngrok.io/repository/NodeApp/"
   },
   "scripts": {
     "start": "nodemon server.js",
