@@ -4,8 +4,9 @@
   "description": "description",
   "main": "index.js",
   "scripts": {
-	  "devStart": "nodemon server.js",
-	  "test": "mocha"
+	  "start": "nodemon server.js",
+	  "test": "mocha",
+	  "sonar": "node sonar-project.js"
   },
   "author": "tanmesh",
   "license": "ISC",
