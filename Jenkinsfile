@@ -22,7 +22,7 @@ stages {
     stage('SonarQube Analysis'){
         steps{
             echo 'Code Quality check with sonarqube'
-            sh "npm run sonar"
+            echo "npm run sonar"
             }
         }
     }
