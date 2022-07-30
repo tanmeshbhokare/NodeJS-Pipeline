@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "description",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://3071-103-102-31-35.in.ngrok.io/artifactory/NodeApp/"
+  },
   "scripts": {
     "start": "nodemon server.js",
     "test": "mocha",
