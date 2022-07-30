@@ -4,7 +4,8 @@
   "description": "description",
   "main": "index.js",
   "scripts": {
-	  "devStart": "nodemon server.js"
+	  "devStart": "nodemon server.js",
+	  "test": "mocha"
   },
   "author": "tanmesh",
   "license": "ISC",
@@ -13,6 +14,8 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "sonarqube-scanner": "^2.7.0",
+    "mocha": "^8.2.0"
   }
 }
